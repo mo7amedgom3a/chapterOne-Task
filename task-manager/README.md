@@ -1,50 +1,78 @@
-# Welcome to your Expo app 👋
+# TaskFlow — React Native Task Manager
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A clean, animated task manager app built with Expo and React Native for the Chapter One Tech Screen.
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Setup & Running
 
 ```bash
-npm run reset-project
+# 1. Install dependencies
+cd task-manager
+npm install
+
+# 2. Start the development server
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Then scan the QR code with **Expo Go** (iOS or Android) or press `i` / `a` to open a simulator.
 
-## Learn more
+## Screenshots
 
-To learn more about developing your project with Expo, look at the following resources:
+|                         Splash                         |                        Empty State                         |                        Task List                         |
+| :----------------------------------------------------: | :--------------------------------------------------------: | :------------------------------------------------------: |
+| <img src="./assets/images/1-Splash.png" width="200" /> | <img src="./assets/images/2-EmptyState.png" width="200" /> | <img src="./assets/images/3-TaskList.png" width="200" /> |
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+|                        Add Task                         |                        Delete Confirm                         |                        All Done                         |
+| :-----------------------------------------------------: | :-----------------------------------------------------------: | :-----------------------------------------------------: |
+| <img src="./assets/images/4-AddTask.png" width="200" /> | <img src="./assets/images/5-DeleteConfirm.png" width="200" /> | <img src="./assets/images/6-AllDone.png" width="200" /> |
 
-## Join the community
+## Features
 
-Join our community of developers creating universal apps.
+- **Add Tasks** — bottom sheet slide-up with animated open/close, shake on empty submit, 100-char limit
+- **Mark Complete** — tap checkbox to toggle; checkbox animates with a scale-pulse; text gets strikethrough
+- **Delete Tasks** — tap ✕ to open a confirmation dialog; tap "Delete" to confirm; tap "Keep" or backdrop to cancel
+- **Task List** — tasks grouped into **Pending** and **Completed** sections with dynamic count labels
+- **Progress Bar** — animated width bar showing % of tasks completed
+- **All Done View** — celebration banner when every task is marked complete; un-checking returns to list view
+- **Splash Screen** — gradient onboarding screen with feature chips and "Get Started" CTA
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## App Structure
+
+```
+src/
+├── components/       # Shared UI components
+│   ├── TopBar.tsx         — Page header with title, subtitle, avatar
+│   ├── BottomNav.tsx      — 3-tab navigation bar
+│   ├── TaskCard.tsx       — Individual task row (animated)
+│   ├── SectionLabel.tsx   — Section header (PENDING / COMPLETED)
+│   ├── ProgressBar.tsx    — Animated completion progress bar
+│   ├── AddTaskSheet.tsx   — Bottom-sheet modal for adding tasks
+│   └── DeleteDialog.tsx   — Centered confirmation dialog
+├── screens/
+│   ├── SplashScreen.tsx   — Gradient onboarding screen
+│   └── TaskListScreen.tsx — Main screen (empty / list / all-done views)
+├── state/
+│   └── useTasks.ts        — Custom hook, all state lives here
+├── theme/
+│   ├── colors.ts          — Color palette
+│   ├── typography.ts      — Font family & size scale
+│   ├── spacing.ts         — Spacing and border-radius tokens
+│   └── shadows.ts         — Platform-aware shadows
+└── types/
+    └── index.ts           — Task interface
+```
+
+## State Management
+
+All state lives in the `useTasks` custom hook using React's built-in `useState`. No external state library is used. Data resets on app restart (no persistence).
+
+## Third-Party Libraries
+
+| Library                          | Purpose                                 |
+| -------------------------------- | --------------------------------------- |
+| `expo`                           | Project scaffolding & native API access |
+| `@react-navigation/native`       | Navigation container                    |
+| `@react-navigation/native-stack` | Stack navigator (Splash → TaskList)     |
+| `expo-linear-gradient`           | Gradient background on Splash screen    |
+| `@expo-google-fonts/inter`       | Inter font (400, 500, 600, 700 weights) |
+| `react-native-safe-area-context` | Safe area handling (notch, home bar)    |
+| `react-native-screens`           | Native screen optimization              |

@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
+import { styles } from '../styles/TaskItemStyles';
 
 type TaskItemProps = {
   title: string;
@@ -12,14 +13,4 @@ export default function TaskItem({ title }: TaskItemProps) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    backgroundColor: '#f9f9f9',
-    borderRadius: 8,
-    marginBottom: 8,
-  },
-  text: {
-    fontSize: 16,
-  },
-});
+
