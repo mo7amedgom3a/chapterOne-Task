@@ -1,9 +1,9 @@
 // components/BottomNav.tsx
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { Colors } from '../theme/colors';
-import { Shadow } from '../theme/shadows';
-import { styles } from '../styles/BottomNavStyles';
+import { Colors } from '../../theme/colors';
+import { Shadow } from '../../theme/shadows';
+import { styles } from './styles';
 
 interface BottomNavProps {
   active: 'list' | 'add' | 'done';

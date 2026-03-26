@@ -3,8 +3,10 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
-import { Shadow } from '../theme/shadows';
-import { styles } from '../styles/SplashScreenStyles';
+import { Colors } from '../../theme/colors';
+import { Typography } from '../../theme/typography';
+import { Shadow } from '../../theme/shadows';
+import { styles } from './styles';
 
 const CHIPS = [
   '+ Add tasks instantly',

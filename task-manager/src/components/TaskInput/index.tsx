@@ -1,5 +1,5 @@
 import { View, TextInput, Button, KeyboardAvoidingView, Platform } from 'react-native';
-import { styles } from '../styles/TaskInputStyles';
+import { styles } from './styles';
 
 export default function TaskInput() {
   return (

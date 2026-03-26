@@ -1,7 +1,7 @@
 // components/SectionLabel.tsx
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-import { styles } from '../styles/SectionLabelStyles';
+import { styles } from './styles';
 
 interface SectionLabelProps {
   title: string;  // e.g. "PENDING"

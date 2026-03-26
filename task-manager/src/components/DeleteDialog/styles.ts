@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from '../theme/colors';
-import { Typography } from '../theme/typography';
-import { Spacing, Radius } from '../theme/spacing';
+import { Colors } from '../../theme/colors';
+import { Typography } from '../../theme/typography';
+import { Spacing, Radius } from '../../theme/spacing';
 
 export const styles = StyleSheet.create({
   backdrop: {

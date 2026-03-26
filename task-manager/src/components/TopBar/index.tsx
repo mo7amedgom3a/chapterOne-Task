@@ -1,7 +1,7 @@
 // components/TopBar.tsx
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { styles } from '../styles/TopBarStyles';
+import { styles } from './styles';
 
 interface TopBarProps {
   title: string;

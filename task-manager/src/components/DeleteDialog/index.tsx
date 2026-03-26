@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import { styles } from '../styles/DeleteDialogStyles';
-import { Shadow } from '../theme/shadows';
+import { styles } from './styles';
+import { Shadow } from '../../theme/shadows';
 
 interface DeleteDialogProps {
   visible: boolean;

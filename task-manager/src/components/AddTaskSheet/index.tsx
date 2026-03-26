@@ -10,9 +10,9 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { Colors } from '../theme/colors';
-import { Shadow } from '../theme/shadows';
-import { styles } from '../styles/AddTaskSheetStyles';
+import { Colors } from '../../theme/colors';
+import { Shadow } from '../../theme/shadows';
+import { styles } from './styles';
 
 interface AddTaskSheetProps {
   visible: boolean;

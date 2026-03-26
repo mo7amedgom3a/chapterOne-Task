@@ -7,10 +7,10 @@ import {
   Animated,
   StyleSheet,
 } from 'react-native';
-import { Colors } from '../theme/colors';
-import { Typography } from '../theme/typography';
-import { Shadow } from '../theme/shadows';
-import { styles } from '../styles/TaskCardStyles';
+import { Colors } from '../../theme/colors';
+import { Typography } from '../../theme/typography';
+import { Shadow } from '../../theme/shadows';
+import { styles } from './styles';
 
 interface TaskCardProps {
   id: string;
