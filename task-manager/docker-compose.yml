@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  task-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-manager-isolated
+    ports:
+      - "8081:8081"
+      - "19000:19000"
+      - "19001:19001"
+      - "19002:19002"
+    environment:
+      - PORT=8081

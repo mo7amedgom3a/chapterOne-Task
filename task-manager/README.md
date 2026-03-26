@@ -13,9 +13,20 @@ npm install
 npx expo start
 ```
 
+### **Using Docker (Recommended)**
+
+The project includes a fully isolated Docker environment.
+
+```bash
+cd task-manager
+docker-compose up --build -d
+```
+
 Then scan the QR code with **Expo Go** (iOS or Android) or press `i` / `a` to open a simulator.
 
-## Screenshots
+## Screenshots & Design
+
+[**View Figma Design Prototype**](https://www.figma.com/design/QpnlU4DN24QLNfJmFN0RLx/Chapter-One---Task-Manager-App-UI-UX?node-id=0-1&t=u9z8RGPDnBaa54Cx-1)
 
 |                         Splash                         |                        Empty State                         |                        Task List                         |
 | :----------------------------------------------------: | :--------------------------------------------------------: | :------------------------------------------------------: |
@@ -40,25 +51,21 @@ Then scan the QR code with **Expo Go** (iOS or Android) or press `i` / `a` to op
 ```
 src/
 ├── components/       # Shared UI components
-│   ├── TopBar.tsx         — Page header with title, subtitle, avatar
-│   ├── BottomNav.tsx      — 3-tab navigation bar
-│   ├── TaskCard.tsx       — Individual task row (animated)
-│   ├── SectionLabel.tsx   — Section header (PENDING / COMPLETED)
-│   ├── ProgressBar.tsx    — Animated completion progress bar
-│   ├── AddTaskSheet.tsx   — Bottom-sheet modal for adding tasks
-│   └── DeleteDialog.tsx   — Centered confirmation dialog
-├── screens/
-│   ├── SplashScreen.tsx   — Gradient onboarding screen
-│   └── TaskListScreen.tsx — Main screen (empty / list / all-done views)
-├── state/
-│   └── useTasks.ts        — Custom hook, all state lives here
-├── theme/
-│   ├── colors.ts          — Color palette
-│   ├── typography.ts      — Font family & size scale
-│   ├── spacing.ts         — Spacing and border-radius tokens
-│   └── shadows.ts         — Platform-aware shadows
-└── types/
-    └── index.ts           — Task interface
+│   ├── AddTaskSheet
+│   ├── BottomNav
+│   ├── DeleteDialog
+│   ├── ProgressBar
+│   ├── SectionLabel
+│   ├── TaskCard
+│   ├── TaskInput
+│   ├── TaskItem
+│   └── TopBar
+├── screens/          # Main application screens
+│   ├── Splash
+│   └── TaskList
+├── state/            # Application state management hooks
+├── theme/            # Design system tokens (colors, typography, etc.)
+└── types/            # TypeScript models & interfaces
 ```
 
 ## State Management
