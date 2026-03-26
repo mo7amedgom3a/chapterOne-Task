@@ -30,11 +30,11 @@ Then scan the QR code with **Expo Go** (iOS or Android) or press `i` / `a` to op
 
 |                         Splash                         |                        Empty State                         |                        Task List                         |
 | :----------------------------------------------------: | :--------------------------------------------------------: | :------------------------------------------------------: |
-| <img src="./assets/images/1-Splash.png" width="200" /> | <img src="./assets/images/2-EmptyState.png" width="200" /> | <img src="./assets/images/3-TaskList.png" width="200" /> |
+| <img src="task-manager/assets/images/1-Splash.png" width="200" /> | <img src="task-manager/assets/images/2-EmptyState.png" width="200" /> | <img src="task-manager/assets/images/3-TaskList.png" width="200" /> |
 
 |                        Add Task                         |                        Delete Confirm                         |                        All Done                         |
 | :-----------------------------------------------------: | :-----------------------------------------------------------: | :-----------------------------------------------------: |
-| <img src="./assets/images/4-AddTask.png" width="200" /> | <img src="./assets/images/5-DeleteConfirm.png" width="200" /> | <img src="./assets/images/6-AllDone.png" width="200" /> |
+| <img src="task-manager/assets/images/4-AddTask.png" width="200" /> | <img src="task-manager/assets/images/5-DeleteConfirm.png" width="200" /> | <img src="task-manager/assets/images/6-AllDone.png" width="200" /> |
 
 ## Features
 
