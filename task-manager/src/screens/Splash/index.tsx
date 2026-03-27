@@ -1,6 +1,6 @@
 // screens/SplashScreen.tsx
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { Colors } from '../../theme/colors';
@@ -48,13 +48,12 @@ export default function SplashScreen() {
       </View>
 
       {/* CTA Button */}
-      <TouchableOpacity
+      <Pressable
         style={[styles.ctaBtn, Shadow.button]}
         onPress={() => router.replace('/(tabs)' as never)}
-        activeOpacity={0.85}
       >
         <Text style={styles.ctaText}>Get Started  →</Text>
-      </TouchableOpacity>
+      </Pressable>
 
       {/* Sub-label */}
       <Text style={styles.subLabel}>Free · No sign-up required</Text>

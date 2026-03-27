@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
+  Pressable,
   Animated,
   StyleSheet,
 } from 'react-native';
@@ -69,7 +69,7 @@ export default function TaskCard({
       />
 
       {/* Checkbox */}
-      <TouchableOpacity onPress={handleToggle} activeOpacity={0.7}>
+      <Pressable onPress={handleToggle}>
         <Animated.View
           style={[
             styles.checkbox,
@@ -79,13 +79,12 @@ export default function TaskCard({
         >
           {isComplete && <Text style={styles.checkmark}>✓</Text>}
         </Animated.View>
-      </TouchableOpacity>
+      </Pressable>
 
       {/* Task text */}
-      <TouchableOpacity
+      <Pressable
         style={styles.textContainer}
         onPress={() => onEdit(id)}
-        activeOpacity={0.7}
       >
         <Text
           style={[
@@ -96,16 +95,15 @@ export default function TaskCard({
         >
           {text}
         </Text>
-      </TouchableOpacity>
+      </Pressable>
 
       {/* Delete button */}
-      <TouchableOpacity
+      <Pressable
         style={styles.deleteBtn}
         onPress={() => onDelete(id)}
-        activeOpacity={0.7}
       >
         <Text style={styles.deleteIcon}>✕</Text>
-      </TouchableOpacity>
+      </Pressable>
     </Animated.View>
   );
 }

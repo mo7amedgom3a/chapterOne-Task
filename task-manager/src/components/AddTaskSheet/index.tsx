@@ -4,7 +4,7 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
+  Pressable,
   Animated,
   StyleSheet,
   KeyboardAvoidingView,
@@ -93,9 +93,8 @@ export default function AddTaskSheet({ visible, onClose, onAdd, initialText, tit
   return (
     <View style={StyleSheet.absoluteFill} pointerEvents="box-none">
       {/* Dimmed backdrop */}
-      <TouchableOpacity
+      <Pressable
         style={[StyleSheet.absoluteFill, styles.backdrop]}
-        activeOpacity={1}
         onPress={handleClose}
       />
 
@@ -140,16 +139,15 @@ export default function AddTaskSheet({ visible, onClose, onAdd, initialText, tit
 
           {/* Buttons */}
           <View style={styles.btnRow}>
-            <TouchableOpacity style={styles.cancelBtn} onPress={handleClose} activeOpacity={0.7}>
+            <Pressable style={styles.cancelBtn} onPress={handleClose}>
               <Text style={styles.cancelLabel}>Cancel</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
+            </Pressable>
+            <Pressable
               style={[styles.addBtn, Shadow.button]}
               onPress={handleAdd}
-              activeOpacity={0.8}
             >
               <Text style={styles.addLabel}>{title ? 'Save Task ✓' : 'Add Task ✓'}</Text>
-            </TouchableOpacity>
+            </Pressable>
           </View>
 
           <Text style={styles.tip}>Tip: Keep tasks short and actionable</Text>

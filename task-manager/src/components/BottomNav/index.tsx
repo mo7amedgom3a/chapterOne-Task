@@ -1,6 +1,6 @@
 // components/BottomNav.tsx
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { Colors } from '../../theme/colors';
 import { Shadow } from '../../theme/shadows';
 import { styles } from './styles';
@@ -54,11 +54,10 @@ export default function BottomNav({
           ];
 
           return (
-            <TouchableOpacity
+            <Pressable
               key={tab.key}
               style={styles.tab}
               onPress={handlers[tab.key]}
-              activeOpacity={0.7}
             >
               <View style={[circleStyle, isAdd ? Shadow.button : undefined]}>
                 <Text style={iconStyle}>{tab.icon}</Text>
@@ -71,7 +70,7 @@ export default function BottomNav({
               >
                 {tab.label}
               </Text>
-            </TouchableOpacity>
+            </Pressable>
           );
         })}
       </View>

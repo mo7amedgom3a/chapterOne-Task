@@ -3,7 +3,7 @@ import React from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
+  Pressable,
   StyleSheet,
 } from 'react-native';
 import { styles } from './styles';
@@ -26,9 +26,8 @@ export default function DeleteDialog({
   return (
     <View style={StyleSheet.absoluteFill} pointerEvents="box-none">
       {/* Backdrop */}
-      <TouchableOpacity
+      <Pressable
         style={[StyleSheet.absoluteFill, styles.backdrop]}
-        activeOpacity={1}
         onPress={onCancel}
       />
 
@@ -46,20 +45,18 @@ export default function DeleteDialog({
 
           {/* Buttons */}
           <View style={styles.btnRow}>
-            <TouchableOpacity
+            <Pressable
               style={styles.keepBtn}
               onPress={onCancel}
-              activeOpacity={0.7}
             >
               <Text style={styles.keepLabel}>Keep</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
+            </Pressable>
+            <Pressable
               style={styles.deleteBtn}
               onPress={onConfirm}
-              activeOpacity={0.8}
             >
               <Text style={styles.deleteLabel}>Delete</Text>
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </View>
       </View>
